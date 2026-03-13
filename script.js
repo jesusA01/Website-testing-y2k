@@ -114,4 +114,13 @@ document.addEventListener("DOMContentLoaded", () => {
         nextTrack()
     })
 
+    async function loadMessages() {
+        const { data, error } = await supabase
+            .from('messages')
+            .select('*')
+            .order('created_at', { ascending: false })
+
+
+    }
+
 })
