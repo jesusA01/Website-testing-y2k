@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //load message function
     async function loadMessages() {
         const { data, error } = await supabase
-            .from('messages')
+            .from('message_board')
             .select('*')
             .order('created_at', { ascending: false })
 
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!name || !message) return
 
         const { data, error } = await supabase
-            .from('messages')
+            .from('message_board')
             .insert([{ name, message }])
 
         if (error) {
