@@ -131,8 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return
         }
 
-        const container = document.getElementById('message-selection')
-        container.innerHTML = ''
+        messageSection.innerHTML = ''
 
         data.forEach(msg => {
             const div = document.createElement('div')
@@ -142,10 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p>${msg.message}</p>
             `
 
-            container.appendChild(div)
+            messageSection.appendChild(div)
         })
     }
-
-    loadMessages()
 
 })
