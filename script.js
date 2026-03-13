@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const pauseBtn = document.querySelector(".pause")
     const nextBtn = document.querySelector(".next")
     const prevBtn = document.querySelector(".prev")
+    const messageForm = document.getElementById('type-message')
+    const nameInput = document.getElementById('guest-name')
+    const messageInput = document.getElementById('guest-message')
+    const messageSection = document.getElementById('message-section')
 
     let offsetX = 0
     let offsetY = 0
@@ -114,6 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
         nextTrack()
     })
 
+
+    //load message function
     async function loadMessages() {
         const { data, error } = await supabase
             .from('messages')
@@ -132,8 +138,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const div = document.createElement('div')
             div.classList.add('message')
             div.innerHTML = `
-            <b>${msg.name}</b> <small>${new Date(msg.created_at).toLocaleString()}</small>
-            <p>${msg.message}</p>
+                <b>${msg.name}</b> <small>${new Date(msg.created_at).toLocaleString()}</small>
+                <p>${msg.message}</p>
             `
 
             container.appendChild(div)
