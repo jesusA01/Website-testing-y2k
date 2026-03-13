@@ -1,4 +1,4 @@
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+// import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const trackList = document.querySelectorAll("#track-list li")
     const currentTrackDisplay = document.querySelector(".display p")
     const visual = document.getElementById("track-visual")
-    const supabaseUrl = 'https://yrtjzfzhfnvallrzyhpe.supabase.co'
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlydGp6ZnpoZm52YWxscnp5aHBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzNzEyODUsImV4cCI6MjA4ODk0NzI4NX0.AGI1sXUJ3iNntRlrb_bAXiIUqv1FVecIMS0V_i2ah0g'
-    const supabase = createClient(supabaseUrl, supabaseKey)
+    // const supabaseUrl = 'https://yrtjzfzhfnvallrzyhpe.supabase.co'
+    // const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlydGp6ZnpoZm52YWxscnp5aHBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzNzEyODUsImV4cCI6MjA4ODk0NzI4NX0.AGI1sXUJ3iNntRlrb_bAXiIUqv1FVecIMS0V_i2ah0g'
+    // const supabase = createClient(supabaseUrl, supabaseKey)
 
     const playBtn = document.querySelector(".play")
     const pauseBtn = document.querySelector(".pause")
@@ -120,54 +120,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     //load message function
-    // async function loadMessages() {
-    //     const { data, error } = await supabase
-    //         .from('messages')
-    //         .select('*')
-    //         .order('created_at', { ascending: false })
+    async function loadMessages() {
+        const { data, error } = await supabase
+            .from('messages')
+            .select('*')
+            .order('created_at', { ascending: false })
 
-    //     if (error) {
-    //         console.error(error)
-    //         return
-    //     }
+        if (error) {
+            console.error(error)
+            return
+        }
 
-    //     messageSection.innerHTML = ''
+        messageSection.innerHTML = ''
 
-    //     data.forEach(msg => {
-    //         const div = document.createElement('div')
-    //         div.classList.add('message')
-    //         div.innerHTML = `
-    //             <b>${msg.name}</b> <small>${new Date(msg.created_at).toLocaleString()}</small>
-    //             <p>${msg.message}</p>
-    //         `
+        data.forEach(msg => {
+            const div = document.createElement('div')
+            div.classList.add('message')
+            div.innerHTML = `
+                <b>${msg.name}</b> <small>${new Date(msg.created_at).toLocaleString()}</small>
+                <p>${msg.message}</p>
+            `
 
-    //         messageSection.appendChild(div)
-    //     })
-    // }
+            messageSection.appendChild(div)
+        })
+    }
 
-    // messageForm.addEventListener('submit', async (e) => {
-    //     e.preventDefault()
+    messageForm.addEventListener('submit', async (e) => {
+        e.preventDefault()
 
-    //     const name = nameInput.value.trim()
-    //     const message = messageInput.value.trim()
+        const name = nameInput.value.trim()
+        const message = messageInput.value.trim()
 
-    //     if (!name || !message) return
+        if (!name || !message) return
 
-    //     const { data, error } = await supabase
-    //         .from('messages')
-    //         .insert([{ name, message }])
+        const { data, error } = await supabase
+            .from('messages')
+            .insert([{ name, message }])
 
-    //     if (error) {
-    //         console.error('there was an error submiting the message', error)
-    //         return
-    //     }
+        if (error) {
+            console.error('there was an error submiting the message', error)
+            return
+        }
 
-    //     nameInput.value = ''
-    //     messageInput.value = ''
+        nameInput.value = ''
+        messageInput.value = ''
 
-    //     loadMessages()
-    // })
+        loadMessages()
+    })
 
-    // loadMessages()
+    loadMessages()
 
 })
