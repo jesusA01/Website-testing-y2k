@@ -120,7 +120,26 @@ document.addEventListener("DOMContentLoaded", () => {
             .select('*')
             .order('created_at', { ascending: false })
 
+        if (error) {
+            console.error(error)
+            return
+        }
 
+        const container = document.getElementById('message-selection')
+        container.innerHTML = ''
+
+        data.forEach(msg => {
+            const div = document.createElement('div')
+            div.classList.add('message')
+            div.innerHTML = `
+            <b>${msg.name}</b> <small>${new Date(msg.created_at).toLocaleString()}</small>
+            <p>${msg.message}</p>
+            `
+
+            container.appendChild(div)
+        })
     }
+
+    loadMessages()
 
 })
