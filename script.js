@@ -148,8 +148,8 @@ document.addEventListener("DOMContentLoaded", () => {
     messageForm.addEventListener('submit', async (e) => {
         e.preventDefault()
 
-        const name = nameInput.ariaValueMax.trim()
-        const message = messageInput.ariaValueMax.trim()
+        const name = nameInput.value.trim()
+        const message = messageInput.value.trim()
 
         if (!name || !message) return
 
