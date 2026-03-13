@@ -1,0 +1,244 @@
+@font-face {
+    font-family: "AngelicWar";
+    src: url("entities/AngelicWar.otf");
+}
+
+body {
+    font-family: "AngelicWar", sans-serif;
+    color: rgb(104, 9, 9);
+    background-color: black;
+
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 90px;
+}
+
+.guestbook {
+    border: 2px solid #00ff9c;
+    width: 50%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    background-image: url(entities/boardbackground.jpeg);
+    background-size: contain;
+    background-repeat: repeat;
+}
+
+.guestbook span {
+    font-size: 25px;
+    background-color: #73c6e7;
+    display: flex;
+    padding: 5px;
+    margin-bottom: -10px;
+    text-shadow: 0 5px 6px #000000;
+    overflow: hidden;
+}
+
+
+
+
+.winamp {
+    position: absolute;
+    left: 2.5rem;
+    top: 240px;
+    width: 300px;
+    border-radius: 2rem;
+    background: #811212;
+    background-image: url(entities/cybercoreimage2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #444;
+    box-shadow: 0 0 10px #424242;
+    overflow: hidden;
+    padding: 15px;
+
+}
+
+.title-bar {
+    max-height: 30px;
+    background-color: rgba(255, 255, 255, 0.027);
+    backdrop-filter: blur(.5rem);
+    border: 2px solid #1f1e1e;
+    border-radius: 2rem;
+    color: #b43232;
+    text-shadow: 0 5px 6px #000000;
+    box-shadow: 0 0 15px #424242;
+    /*margin-left: 20px;
+    margin-right: 15px;*/
+    font-size: 23px;
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    cursor: move;
+}
+
+
+.title-bar img {
+    height: 70px;
+    width: 100px;
+    margin-top: -20px;
+}
+
+.display {
+    background: #000;
+    color: #00ff9c;
+    text-align: center;
+    font-size: 25px;
+    text-shadow: 0 0 8px #00ff9c;
+    margin: 1em;
+    border-radius: 5px;
+}
+
+.display p {
+    margin-top: -10px;
+    background-color: #000000;
+    border-radius: 50px;
+}
+
+#track-visual {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+
+}
+
+.playlist {
+    background: #111;
+    color: #00ff9c;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 10px;
+    max-height: 120px;
+    overflow-y: auto;
+    font-size: 14px;
+    max-height: 3rem;
+    overflow-x: hidden;
+}
+
+.playlist::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+#track-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#track-list li {
+    cursor: pointer;
+    padding: 4px;
+}
+
+#track-list li:hover {
+    background: #222;
+}
+
+#track-list li.current {
+    background: #00ff9c33;
+    font-weight: bold;
+}
+
+.controls button {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #000000;
+    cursor: pointer;
+    border-radius: 50px;
+
+}
+
+.controls button:hover {
+    box-shadow: 0 0 6px #00ff9c;
+}
+
+.prev {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(circle at center, #00ff9c33 0%, #001a12 60%, #000000 80%);
+
+}
+
+.play {
+    background-image: radial-gradient(circle at center, #ff000033 0%, #1a0000 60%, #000000 80%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.pause {
+    background-image: radial-gradient(circle at center, #ffbb0033 0%, #1a1400 60%, #000000 80%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.next {
+    background-image: radial-gradient(circle at center, #c300ff33 0%, #14001a 60%, #000000 80%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+
+.equalizer {
+    display: flex;
+    gap: 3px;
+    padding: 5px;
+    justify-content: center;
+    height: 20px;
+    background-color: #000000;
+    background: linear-gradient(-160deg, #bd120c33 0%, #4b0606 55%, #0c0b0b 80%);
+    /*margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 1rem;*/
+    width: 80px;
+    margin: 0 auto 1rem auto;
+    border: 2px solid #313131;
+    border-radius: 50px;
+}
+
+.equalizer span {
+    width: 5px;
+    height: 15px;
+    box-shadow: 0 0 6px #00ff9d;
+    background: #00ff9d;
+    transform-origin: bottom;
+    animation: eq 0.6s infinite alternate;
+}
+
+.equalizer span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.equalizer span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.equalizer span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.equalizer span:nth-child(5) {
+    animation-delay: 0.15s;
+}
+
+@keyframes eq {
+    from {
+        transform: scaleY(0.3);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}

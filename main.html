@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1>website y2k style</h1>
+
+    <div class="guestbook">
+
+        <div class="header-section">
+            <span>Wizards Paradise Message Board</span>
+            <hr>
+        </div>
+
+        <div id="message-section"></div>
+
+        <form id="type-message">
+
+            <input id="guest-name" placeholder="Name" type="text" required>
+
+            <textarea id="guest-message" placeholder="Enter Message..." required></textarea>
+
+            <button type="submit">Send!</button>
+
+        </form>
+
+    </div>
+
+    <div class="winamp">
+        <div class="title-bar">
+            <span>-----wizards paradise</span>
+            <div class="window-controls">
+                <img src="entities/star.gif" alt="">
+            </div>
+        </div>
+
+        <div class="display">
+            <img src="visuals/track1.gif" alt="" id="track-visual">
+            <p id="current-track">TRACK_01.MP3</p>
+        </div>
+
+        <div class="playlist">
+            <ul id="track-list">
+                <li data-src="entities/music/sniper gonna fuk - sniper2004.mp3"
+                    data-visual="entities/visuals/track1.gif">track1.mp3</li>
+                <li data-src="entities/music/Van Cleef Island - Trippie Redd.mp3"
+                    data-visual="entities/visuals/track2.gif">track2.mp3</li>
+                <li data-src="entities/music/Juice WRLD - Oxycodone (Official Audio) - Juice WRLD.mp3"
+                    data-visual="entities/visuals/track3.gif">track3.mp3</li>
+                <li data-src="entities/music/Meiko Nakahara - Fantasy (1982).mp3"
+                    data-visual="entities/visuals/track4.gif">track4.mp3</li>
+                <li data-src="entities/music/Red Moonlight - Juice WRLD.mp3" data-visual="entities/visuals/track5.gif">
+                    track5.mp3</li>
+                <li data-src="entities/music/Lil Uzi Vert - Chrome Heart Tags [Official Audio] - LIL UZI VERT.mp3"
+                    data-visual="entities/visuals/track6.gif">track6.mp3</li>
+            </ul>
+        </div>
+
+        <audio id="audio" src="" hidden></audio>
+
+        <div class="equalizer">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+        </div>
+
+        <div class="controls">
+            <button class="prev"></button>
+            <button class="play"></button>
+            <button class="pause"></button>
+            <button class="next"></button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

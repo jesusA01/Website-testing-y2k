@@ -1,0 +1,117 @@
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const win = document.querySelector(".winamp")
+    const bar = document.querySelector(".title-bar")
+    const audio = document.getElementById("audio")
+    const trackList = document.querySelectorAll("#track-list li")
+    const currentTrackDisplay = document.querySelector(".display p")
+    const visual = document.getElementById("track-visual")
+    const supabaseUrl = 'https://yrtjzfzhfnvallrzyhpe.supabase.co'
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlydGp6ZnpoZm52YWxscnp5aHBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzNzEyODUsImV4cCI6MjA4ODk0NzI4NX0.AGI1sXUJ3iNntRlrb_bAXiIUqv1FVecIMS0V_i2ah0g'
+    const supabase = createClient(supabaseUrl, supabaseKey)
+
+    const playBtn = document.querySelector(".play")
+    const pauseBtn = document.querySelector(".pause")
+    const nextBtn = document.querySelector(".next")
+    const prevBtn = document.querySelector(".prev")
+
+    let offsetX = 0
+    let offsetY = 0
+    let dragging = false
+    let currentTrack = 0
+
+
+    // --- Initialize first track ---
+    audio.src = trackList[currentTrack].dataset.src
+    updateDisplay()
+
+
+    // --- Dragging window ---
+    bar.addEventListener("mousedown", (e) => {
+        e.preventDefault()
+        dragging = true
+        offsetX = e.clientX - win.offsetLeft
+        offsetY = e.clientY - win.offsetTop
+    })
+
+    document.addEventListener("mousemove", (e) => {
+        if (!dragging) return
+        win.style.left = e.clientX - offsetX + "px"
+        win.style.top = e.clientY - offsetY + "px"
+    })
+
+    document.addEventListener("mouseup", () => dragging = false)
+
+
+    // --- Click track in playlist ---
+    trackList.forEach((li, index) => {
+        li.addEventListener("click", () => {
+            playTrack(index)
+        })
+    })
+
+
+    // --- Control buttons ---
+    playBtn.addEventListener("click", () => {
+        audio.play()
+    })
+
+    pauseBtn.addEventListener("click", () => {
+        audio.pause()
+    })
+
+    nextBtn.addEventListener("click", () => {
+        nextTrack()
+    })
+
+    prevBtn.addEventListener("click", () => {
+        prevTrack()
+    })
+
+
+    // --- Functions ---
+
+    function playTrack(index) {
+
+        currentTrack = index
+
+        const track = trackList[currentTrack]
+
+        audio.src = track.dataset.src
+        audio.play()
+
+        currentTrackDisplay.textContent = track.textContent
+
+        visual.src = track.dataset.visual
+
+        trackList.forEach(li => li.classList.remove("current"))
+        track.classList.add("current")
+
+    }
+
+    function nextTrack() {
+        currentTrack = (currentTrack + 1) % trackList.length
+        playTrack(currentTrack)
+    }
+
+    function prevTrack() {
+        currentTrack = (currentTrack - 1 + trackList.length) % trackList.length
+        playTrack(currentTrack)
+    }
+
+    function updateDisplay() {
+        currentTrackDisplay.textContent = trackList[currentTrack].textContent
+
+        trackList.forEach(li => li.classList.remove("current"))
+        trackList[currentTrack].classList.add("current")
+    }
+
+
+    // --- Auto play next track ---
+    audio.addEventListener("ended", () => {
+        nextTrack()
+    })
+
+})
