@@ -145,4 +145,29 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    messageForm.addEventListener('submit', async (e) => {
+        e.preventDefault()
+
+        const name = nameInput.ariaValueMax.trim()
+        const message = messageInput.ariaValueMax.trim()
+
+        if (!name || !message) return
+
+        const { data, error } = await supabase
+            .from('messages')
+            .insert([{ name, message }])
+
+        if (error) {
+            console.error('there was an error submiting the message', error)
+            return
+        }
+
+        nameInput.value = ''
+        messageInput.value = ''
+
+        loadMessages()
+    })
+
+    loadMessages()
+
 })
