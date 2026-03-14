@@ -30,6 +30,14 @@ h1 {
     background-color: #00ff9c;
 }
 
+.guestbook img {
+    height: 50px;
+    width: 100px;
+    margin-top: -10px;
+    object-fit: contain;
+
+}
+
 .guestbook span {
     font-size: 25px;
     background-color: rgba(255, 255, 255, 0.027);
@@ -42,6 +50,7 @@ h1 {
     text-shadow: 0 5px 6px #000000;
     overflow: hidden;
     text-shadow: 0 5px 6px #ffffff;
+    justify-content: center;
 }
 
 .guestbook form {

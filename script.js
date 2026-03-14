@@ -30,8 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // --- Initialize first track ---
-    audio.src = trackList[currentTrack].dataset.src
-    updateDisplay()
+    playTrack(currentTrack)
+
+    // audio.src = trackList[currentTrack].dataset.src
+    // updateDisplay()
 
 
     // --- Dragging window ---
@@ -140,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
             div.classList.add('message')
             div.innerHTML = `
                 <small>${new Date(msg.created_at).toLocaleString('en-US', { timeZone: 'America/Los_Angeles', dateStyle: 'short', timeStyle: 'short' })}</small> 
-                <br> <b>${msg.name}</b>
+                <b> | User: ${msg.name}</b>
                 <p>${msg.message}</p> <hr>
             `
 
