@@ -9,8 +9,7 @@ body {
     /*background-image: url(entities/cybercore.jpg);*/
     background: #ebe9da;
     background-image: linear-gradient(176deg, rgba(235, 233, 218, 1) 0%, rgba(47, 90, 143, 1) 100%);
-    background-size: cover;
-    background-repeat: repeat;
+
 }
 
 h1 {
@@ -21,7 +20,7 @@ h1 {
 .guestbook {
     border: 2px solid #000000;
     width: 50%;
-    height: 500px;
+    height: 691px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
@@ -33,13 +32,16 @@ h1 {
 
 .guestbook span {
     font-size: 25px;
-    background-color: #73c6e7;
+    background-color: rgba(255, 255, 255, 0.027);
+    backdrop-filter: blur(1rem);
+    border: 2px solid #9e9a9a;
     border-radius: 15px;
     display: flex;
     padding: 5px;
     margin-bottom: -10px;
     text-shadow: 0 5px 6px #000000;
     overflow: hidden;
+    text-shadow: 0 5px 6px #ffffff;
 }
 
 .guestbook form {
@@ -58,6 +60,7 @@ h1 {
 .guestbook input {
     border-radius: 40px;
     padding: 3px;
+    box-shadow: 0 0 6px #00ff9c;
 }
 
 .guestbook textarea {
@@ -67,7 +70,8 @@ h1 {
     resize: none;
     border-radius: 40px;
     padding: 15px;
-    border: px;
+    box-shadow: 0 0 6px #00ff9c;
+    border: 1px solid black;
 
 }
 
@@ -81,10 +85,28 @@ h1 {
     cursor: pointer;
 }
 
+#message-section {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #4c4e4d;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    height: fit-content;
+    overflow-y: auto;
+    border-radius: 7px;
+    color: white;
+    box-shadow: 0 0 6px #00ff9c;
+    border: 1px solid black;
+}
+
 .winamp {
     position: absolute;
     left: 2.5rem;
-    top: 240px;
+    top: 250px;
     width: 300px;
     border-radius: 2rem;
     background: #811212;
