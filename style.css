@@ -39,7 +39,15 @@ h1 {
     overflow: hidden;
 }
 
+.guestbook form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 3px;
+    padding: 5px;
 
+}
 
 
 .winamp {
