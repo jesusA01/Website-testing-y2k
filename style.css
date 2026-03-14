@@ -28,6 +28,7 @@ h1 {
     background-size: contain;
     background-repeat: repeat;
     background-color: #00ff9c;
+
 }
 
 .guestbook img {
@@ -330,23 +331,30 @@ h1 {
     }
 }
 
-/* @media (max-width: 768px) {
+@media screen and (max-width: 600px) {
     .winamp {
         width: 300px;
-        fix to top top: 300px;
+        top: 300px;
         left: 0;
         right: 0;
         z-index: 1000;
+        margin: 0 auto;
+
     }
 
     .guestbook {
         width: 300px;
-        top: 900px;
-        margin-top: 220px;
+        margin-top: 160%;
+        text-align: center;
+    }
 
-        height of MP3 player+some padding #message-section {
-            max-height: calc(100vh - 220px);
-            fit under fixed MP3 player overflow-y: auto;
+    .guestbook textarea {
+        width: 80%;
+    }
 
-        }
-    } */
+    #message-section {
+        width: 85%;
+        height: 43%;
+        font-size: 85%;
+    }
+}
