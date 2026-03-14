@@ -6,9 +6,9 @@
 body {
     font-family: "AngelicWar", sans-serif;
     color: rgb(104, 9, 9);
-    background-color: black;
-
-
+    background-image: url(entities/cybercore.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {
@@ -23,7 +23,7 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
-    background-image: url(entities/boardbackground.jpeg);
+    background-image: url(entities/guestbookbackgrnd.jpg);
     background-size: contain;
     background-repeat: repeat;
     background-color: #00ff9c;
@@ -52,14 +52,17 @@ h1 {
 
 }
 
-.guestbook input {}
+.guestbook input {
+    border-radius: 40px;
+    padding: 3px;
+}
 
 .guestbook textarea {
     text-decoration: none;
     width: 400px;
     height: 100px;
     resize: none;
-    border-radius: 50px;
+    border-radius: 40px;
     padding: 15px;
     border: px;
 
@@ -71,7 +74,7 @@ h1 {
 }
 
 .guestbook button:hover {
-    box-shadow: 0 0 6px #000000;
+    box-shadow: 0 0 6px #00ff9c;
     cursor: pointer;
 }
 
