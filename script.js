@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentTrackDisplay = document.querySelector(".display p")
     const visual = document.getElementById("track-visual")
     const supabaseUrl = 'https://yrtjzfzhfnvallrzyhpe.supabase.co'
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlydGp6ZnpoZm52YWxscnp5aHBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzNzEyODUsImV4cCI6MjA4ODk0NzI4NX0.AGI1sXUJ3iNntRlrb_bAXiIUqv1FVecIMS0V_i2ah0g'
+    const supabaseKey = 'sb_publishable_vFuFrHpr9aoEiUKLocQglA_75IHrBUr'
     const supabase = createClient(supabaseUrl, supabaseKey)
 
     const playBtn = document.querySelector(".play")
