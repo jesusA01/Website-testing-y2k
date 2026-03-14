@@ -41,13 +41,25 @@ h1 {
 
 .guestbook form {
     display: flex;
+    flex-direction: column;
+    text-align: center;
     justify-content: center;
     align-items: center;
     border: 2px solid black;
     border-radius: 3px;
     padding: 5px;
+}
+
+.guestbook input {}
+
+.guestbook textarea {
+    text-decoration: none;
+    width: 400px;
+    height: 100px;
 
 }
+
+.guestbook button {}
 
 
 .winamp {
