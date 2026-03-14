@@ -329,3 +329,29 @@ h1 {
         transform: scaleY(1);
     }
 }
+
+@media (max-width: 768px) {
+    .winamp {
+        width: 100%;
+        position: fixed;
+        /* fix to top */
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .guestbook {
+        width: 100%;
+        margin-top: 220px;
+        /* height of MP3 player + some padding */
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    #message-section {
+        max-height: calc(100vh - 220px);
+        /* fit under fixed MP3 player */
+        overflow-y: auto;
+    }
+}
