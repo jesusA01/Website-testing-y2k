@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const supabaseKey = 'sb_publishable_vFuFrHpr9aoEiUKLocQglA_75IHrBUr'
     const supabase = createClient(supabaseUrl, supabaseKey)
 
+
+
     const playBtn = document.querySelector(".play")
     const pauseBtn = document.querySelector(".pause")
     const nextBtn = document.querySelector(".next")

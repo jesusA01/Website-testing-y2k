@@ -26,6 +26,7 @@ h1 {
     background-image: url(entities/boardbackground.jpeg);
     background-size: contain;
     background-repeat: repeat;
+    background-color: #00ff9c;
 }
 
 .guestbook span {
