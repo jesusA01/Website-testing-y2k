@@ -201,6 +201,10 @@ h1 {
     overflow-x: hidden;
 }
 
+.controls label {
+    cursor: url(entities/Cosmica/precisionselect.cur), pointer;
+}
+
 .playlist::-webkit-scrollbar {
     width: 0px;
     background: transparent;
