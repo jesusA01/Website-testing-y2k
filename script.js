@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const div = document.createElement('div')
             div.classList.add('message')
             div.innerHTML = `
-                <b>${msg.name}</b> <small>${new Date(msg.created_at).toLocaleString()}</small>
+                <b>${msg.name}</b> <small>${new Date(msg.created_at).toLocaleString('en-US', { timeZone: 'America/Los_Angeles', dateStyle: 'short', timeStyle: 'short' })}</small>
                 <p>${msg.message}</p>
             `
 
