@@ -44,10 +44,12 @@ h1 {
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    gap: 12px;
     align-items: center;
     border: 2px solid black;
     border-radius: 3px;
     padding: 5px;
+
 }
 
 .guestbook input {}
@@ -56,10 +58,22 @@ h1 {
     text-decoration: none;
     width: 400px;
     height: 100px;
+    resize: none;
+    border-radius: 50px;
+    padding: 15px;
+    border: px;
 
 }
 
-.guestbook button {}
+.guestbook button {
+    background-image: radial-gradient(circle at center, #00ff9c33 0%, #001a12 60%, #000000 80%);
+    color: rgb(255, 255, 255);
+}
+
+.guestbook button:hover {
+    box-shadow: 0 0 6px #000000;
+    cursor: pointer;
+}
 
 
 .winamp {
