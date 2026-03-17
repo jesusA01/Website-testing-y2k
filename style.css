@@ -16,10 +16,13 @@ body {
     flex-direction: column;
     font-family: "AngelicWar", sans-serif;
     color: rgb(104, 9, 9);
-    /*background-image: url(entities/cybercore.jpg);*/
-    background: #ebe9da;
-    background-image: linear-gradient(176deg, rgba(235, 233, 218, 1) 0%, rgba(47, 90, 143, 1) 100%);
+    background: #636261;
+    /* background-image: linear-gradient(176deg, rgba(235, 233, 218, 1) 0%, rgba(47, 90, 143, 1) 100%); */
     cursor: url(entities/Cosmica/default.cur), auto;
+}
+
+nav {
+    background-color: #00ff9c;
 }
 
 footer {
@@ -29,8 +32,6 @@ footer {
     width: 100%;
     background: #111;
     padding: 10px;
-
-
 }
 
 h1 {
@@ -361,29 +362,46 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .winamp {
-        width: 300px;
-        top: 300px;
+        position: static;
+        width: 90%;
+        max-width: 300px;
+        height: auto;
+        min-height: 53%;
+        margin: 20px auto;
+
+        /* width: 300px;
+        top: 50px;
         left: 0;
         right: 0;
         z-index: 1000;
-        margin: 0 auto;
+        margin: 0 auto; */
 
     }
 
     .guestbook {
-        width: 300px;
-        margin-top: 160%;
+        width: 90%;
+        margin: 20px auto;
         text-align: center;
+
     }
 
     .guestbook textarea {
         width: 80%;
     }
 
+    footer {
+        text-align: center;
+    }
+
     #message-section {
         width: 85%;
-        height: 43%;
+        height: 35%;
         font-size: 85%;
     }
 }
