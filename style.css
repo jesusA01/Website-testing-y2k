@@ -3,13 +3,34 @@
     src: url("entities/AngelicWar.otf");
 }
 
+html,
 body {
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: "AngelicWar", sans-serif;
     color: rgb(104, 9, 9);
     /*background-image: url(entities/cybercore.jpg);*/
     background: #ebe9da;
     background-image: linear-gradient(176deg, rgba(235, 233, 218, 1) 0%, rgba(47, 90, 143, 1) 100%);
-    cursor: url(entities/Cosmica/default.cur), default;
+    cursor: url(entities/Cosmica/default.cur), auto;
+}
+
+footer {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: auto;
+    width: 100%;
+    background: #111;
+    padding: 10px;
+
+
 }
 
 h1 {
@@ -17,18 +38,25 @@ h1 {
     font-size: 90px;
 }
 
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
 .guestbook {
     border: 2px solid #000000;
-    width: 50%;
-    height: 691px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 370px;
+    height: 600px;
+    /* margin-left: auto;
+    margin-right: auto; */
     border-radius: 15px;
     background-image: url(entities/guestbookbackgrnd.jpg);
     background-size: contain;
     background-repeat: repeat;
     background-color: #00ff9c;
-
 }
 
 .guestbook img {
@@ -52,6 +80,7 @@ h1 {
     overflow: hidden;
     text-shadow: 0 5px 6px #ffffff;
     justify-content: center;
+    text-align: center;
 }
 
 .guestbook form {
@@ -80,7 +109,7 @@ h1 {
 
 .guestbook textarea {
     text-decoration: none;
-    width: 400px;
+    width: 80%;
     height: 100px;
     resize: none;
     border-radius: 40px;
@@ -108,14 +137,14 @@ h1 {
     text-align: center;
     font-size: 17px;
     flex-direction: column;
-    max-width: 700px;
+    max-width: 85%;
     margin: 0 auto;
     overflow-y: auto;
     border-radius: 7px;
     color: white;
     box-shadow: 0 0 6px #00ff9c;
     border: 1px solid black;
-    max-height: 330px;
+    height: 35%;
 
 }
 

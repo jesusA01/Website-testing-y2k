@@ -10,29 +10,30 @@
 </head>
 
 <body>
-    <h1>TUFF AHH WEBSITE</h1>
 
-    <div class="guestbook">
+    <div class="main-content">
+        <div class="guestbook">
 
-        <div class="header-section">
-            <span> <img src="entities/star.gif" alt="error">
-                Wizards Paradise Message Board <img src="entities/star.gif" alt="error"></span>
+            <div class="header-section">
+                <span> <img src="entities/star.gif" alt="error">
+                    Wizards Paradise Message Board <img src="entities/star.gif" alt="error"></span>
 
-            <hr>
+                <hr>
+            </div>
+
+            <form id="type-message">
+                <label for="guest-name">Username: </label>
+                <input id="guest-name" placeholder="Name" type="text" required>
+                <label for="guest-message">Enter Your Message: </label>
+                <textarea id="guest-message" maxlength="250" placeholder="Enter Message..." required></textarea>
+
+                <button type="submit" id="submit">Send!</button>
+
+            </form>
+
+            <div id="message-section"></div>
+
         </div>
-
-        <form id="type-message">
-            <label for="guest-name">Username: </label>
-            <input id="guest-name" placeholder="Name" type="text" required>
-            <label for="guest-message">Enter Your Message: </label>
-            <textarea id="guest-message" maxlength="250" placeholder="Enter Message..." required></textarea>
-
-            <button type="submit" id="submit">Send!</button>
-
-        </form>
-
-        <div id="message-section"></div>
-
     </div>
 
     <div class="winamp">
@@ -93,12 +94,13 @@
         </div>
     </div>
 
-    <footer style="font-family: 'Courier New', Courier, monospace;">
+    <footer>
 
         <br>
-        <p style="float: right;">© 2026 FUSIONZOMBIE 😝 || Fan-made non-commercial project. All media belongs to
+        <p style="float: right; margin: 0;">© 2026 FUSIONZOMBIE 😝 || Fan-made non-commercial project. All media belongs
+            to
             original creators.
-        <p>SITE STILL IN PROGRESS</p>
+        <p style="margin: 0;">SITE STILL IN PROGRESS</p>
         </p>
 
     </footer>
